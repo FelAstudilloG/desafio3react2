@@ -1,22 +1,50 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
 
-import Home from "./Views/Home";
-import Navbar from "./Views/Navbar"
-import Pokemons from "./Views/Pokemons";
-import Details from "./Views/Details";
+//ROUTER
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-export default function App() {
-    return (
 
-        <div className="app-total" >
-            <BrowserRouter>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/Pokemons" element={<Pokemons />} />
-                    <Route path="/Pokemons/:name" element={<Details />} />
-                </Routes>
-            </BrowserRouter>
-        </div>
-    )
+//COMPONENTS
+import NavBar from './components/NavBar'
+
+
+//STYLES
+import './components/styles.css'
+
+//VIEWS
+
+import Home from './views/Home'
+import Pokemones from './views/Pokemones'
+import Pokemon from './views/Pokemon'
+
+
+function App() {
+
+  
+
+
+  return (
+   
+
+
+      <div className="App">
+
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/pokemones' element={<Pokemones />} />
+            <Route path='/pokemones/:name' element={<Pokemon />} />
+
+
+          </Routes>
+
+
+        </BrowserRouter>
+
+      </div>
+
+
+  );
 }
+
+export default App;
